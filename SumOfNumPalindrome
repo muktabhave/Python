@@ -1,0 +1,35 @@
+def IsNumPalindrome(num):
+
+    res= list(map(int, str(num)))
+
+    sum1=0
+
+    for i in res:
+
+       sum1= sum1+ i
+    
+    return IsPalindrome(sum1)
+
+def reverse(s):
+    return(s[::-1])
+
+def IsPalindrome(sum1):
+    n= list(map(int, str(sum1)))
+    
+    rev= reverse(n)
+
+    if (n==rev):
+
+        return True
+
+    else:
+        return False
+  
+def main ():
+   print(IsNumPalindrome(1633))
+
+if (__name__=="__main__"):
+   main()
+
+
+
