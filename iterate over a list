@@ -1,0 +1,32 @@
+#with for loop and range
+def IterateList (l= []):
+
+    for i in range (len(l)):
+
+        print(l[i])
+
+#with while loop
+def IterateList1 (l= []):
+
+    i=0
+    while i< len(l):
+        print(l[i])
+        i+= 1
+
+# for loop
+def IterateList2 (l= []):
+
+    for i in l:
+        print(i)
+
+#using list comprehension
+
+def IterateList3 (l=[]):
+
+    [print(i) for i in l]
+
+def main():
+    return (IterateList3([3,7,20,9]))
+
+if (__name__=="__main__"):
+    main()
