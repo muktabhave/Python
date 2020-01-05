@@ -1,0 +1,21 @@
+def iteration():
+    
+    for i in range (5):
+        print(i)
+    print ("for loop done")
+
+    
+    while (i<8):
+        print(i)
+        i=i+1
+    print ("while loop done")
+
+def main():
+
+    iteration()
+
+if (__name__=="__main__"):
+    main()
+
+
+
