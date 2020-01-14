@@ -1,3 +1,3 @@
 # Python
 
-IMPORTANT PROGRAMING ASPECTS OF PYTHON
+Important programming aspects of python
