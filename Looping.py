@@ -1,4 +1,4 @@
-#for loop
+#for loop 
 >>> colors=["red", "blue", "black"]
 >>> for i in colors:
 ...     print(i)
