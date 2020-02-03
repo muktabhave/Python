@@ -6,7 +6,7 @@ class Robot():
     self.colour= colour
 
   def introduce_self(self):
-    print("My name is "+ self.name)
+    print("My name is "+ self.name) 
 
 # r1= Robot()
 # r1.name="Tom"
