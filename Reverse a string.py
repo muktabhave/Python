@@ -8,6 +8,15 @@ if(__name__=="__main__"):
     print(reverse("Geeksforgeeks"))
 
 #Method-2:
+
+def reverse(s): 
+  return ''.join(reversed(s))
+  
+if(__name__=="__main__"):
+    
+    print(reverse("Geeksforgeeks"))
+    
+#Method-3:
   
 def reverse(s): 
   str = "" 
