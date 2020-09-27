@@ -1,4 +1,4 @@
-#Method-1: cheching first char with last
+#Method-1: checking first char with last
 
 def palindrome(s): 
     i=0
