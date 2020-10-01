@@ -1,4 +1,4 @@
-# count substring
+# count number of overlapping substrings eg. 'CDC' in 'ABCDCDC', count=2
 
 def count_substring(string, sub_string):
     count = 0
