@@ -1,3 +1,5 @@
+# Hello World program in Python
+
 def CompareString(itemlist, query):
     
     for string in itemlist:
@@ -5,23 +7,25 @@ def CompareString(itemlist, query):
         if(len(string)== len(query)):
             
             i=0
-            isvalid= True
+            isvalid= False
             
             while (i< len(string)):
                 
-                if(string[i]!= query[i] and query[i]!="."):
+                if(string[i]== query[i] or query[i]=="."):
                     
+                    isvalid= True
+                    i=i+1
+                else:
                     isvalid= False
                     break
-                else:
-                    i=i+1
                     
-            if(i==len(string)):
+            if(isvalid== True):
                 return True
     
     return False
     
 if (__name__=="__main__"):
     
-    print(CompareString(['cat', 'bat', 'rat'], 'r..'))
+    print(CompareString(['cat', 'bat', 'rat'], 'ra.'))
+                
                 
