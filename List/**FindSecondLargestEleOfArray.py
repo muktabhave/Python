@@ -1,8 +1,7 @@
 import math
 if __name__ == '__main__':
     n = int(input())
-    arr = map(int, input().split())
-    arr= list(arr)
+    arr = list(map(int, input().split()))
     m=-math.inf
     s=-math.inf
 
