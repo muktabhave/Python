@@ -9,7 +9,7 @@ class Solution(object):
     
         for j in dict1.keys():
         
-            comp=val-dict1[j]
+            comp=target-dict1[j]
         
             if (comp in dict1.values()):
             
