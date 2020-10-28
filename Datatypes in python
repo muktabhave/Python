@@ -13,31 +13,12 @@
 
 >>> help(str.upper)
 
->>> clear
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'clear' is not defined
->>> clear()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'clear' is not defined
->>> q
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'q' is not defined
->>> "hello"
 'hello'
 >>> 'hello'
 'hello'
 >>> "hello's"
 "hello's"
->>> 'hello's'
-  File "<stdin>", line 1
-    'hello's'
-           ^
-SyntaxError: invalid syntax
->>> 'hello\'s'
-"hello's"
+
 >>> "mukta"+" s"
 'mukta s'
 >>> long_string="""
