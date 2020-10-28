@@ -5,7 +5,7 @@ import math
 if __name__ == '__main__':
 
     marks= dict()
-    for _ in range(int(input())):
+    for i in range(int(input())):
         name = input()
         score = float(input())
         marks[name]= score
