@@ -127,4 +127,3 @@ set()
 ... 
 >>> ranibow_colors ^ fav_colors
 {'blue', 'purple', 'magenta', 'yellow', 'green', 'black', 'red'}
->>> 
