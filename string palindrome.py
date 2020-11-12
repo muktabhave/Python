@@ -34,3 +34,5 @@ def palindrome(s):
 if(__name__=="__main__"):
     
     print(palindrome("saliilas"))
+
+    
