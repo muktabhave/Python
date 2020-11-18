@@ -22,9 +22,7 @@ def multiplication(a):
             elif (a[i]>= secmax):
                 
                 secmax= a[i]
-                print ("maxe", maxe)
-            
-                print ("secmax",secmax)
+
         else:
             
             if(a[i]<= mine):
@@ -33,9 +31,7 @@ def multiplication(a):
                 mine= a[i]
             elif (a[i]<=secmin):
                 secmin=a[i]
-                
-                
-    print(maxe,secmax, mine, secmin)
+                    
     
     if ((maxe*secmax)> (mine*secmin)):
         
