@@ -11,4 +11,3 @@ for i in l1:
         res.append(i)
 
 print res
-
