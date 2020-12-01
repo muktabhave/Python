@@ -19,3 +19,5 @@ if __name__ == '__main__':
         count=count+1
     
     print ("{:.2f}".format(suma/count))
+
+    
