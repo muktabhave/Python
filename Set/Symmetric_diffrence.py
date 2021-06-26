@@ -10,8 +10,5 @@ if (__name__=="__main__"):
 
     l= fset^eset
     count=0
-
-    for i in l:
-        count=count+1
     
-    print(count)
+    print(len(l))
