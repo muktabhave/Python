@@ -13,4 +13,6 @@ class Solution(object):
         
             if (comp in dict1.values()):
             
-                return (j, int(dict1[comp]))
+                for x, y in dict1.items():
+                    if (comp==y):
+                        return (j,x)
