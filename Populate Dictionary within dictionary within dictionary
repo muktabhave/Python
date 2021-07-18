@@ -1,0 +1,24 @@
+
+input_str= [['US', '25-50', 390],
+['US', '25-50' , 1000],
+['US', '50-75', 700],
+['US', '12-25', 500],
+['GB', '12-25', 800],
+['GB', '12-25', 800],
+['GB', '50-75', 400]]
+
+dict1= dict()
+
+for ele in input_str:
+    
+    
+    if not (ele[0] in dict1.keys()):
+        dict1[ele[0]]= {}
+
+    if not (ele[1] in dict1[ele[0]].keys()):
+        dict1[ele[0]][ele[1]]= ele[2]
+    
+    else:
+        dict1[ele[0]][ele[1]]= dict1[ele[0]][ele[1]]+ ele[2]
+
+print(dict1)
