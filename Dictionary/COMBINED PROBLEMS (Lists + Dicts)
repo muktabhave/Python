@@ -1,0 +1,178 @@
+"""
+LESSON 3 — COMBINED PROBLEMS (Lists + Dicts)
+
+This is where most real problems live. Each problem uses at least ONE list
+technique and ONE dict technique together.
+
+Same rules:
+  1. Use the 4-step framework.
+  2. Solve ONE at a time. Run: python3 lessons/03_combined_problems.py
+  3. Stuck for 15+ min? Ask for a hint.
+
+Ordered easy → interview-style.
+"""
+
+
+# -----------------------------------------------------------------------------
+# PROBLEM 1 — Unique in order  (Filter using a dict as "seen")
+# Return a NEW list with duplicates removed, PRESERVING first-seen order.
+# Example: unique_in_order([1, 2, 2, 3, 1, 4]) → [1, 2, 3, 4]
+# Edge case: [] → []
+# Hint: like has_duplicates, but instead of returning True, append to a result list.
+# -----------------------------------------------------------------------------
+def unique_in_order(items):
+    # TODO
+    new_list=[]
+    for ele in items:
+        if (ele not in new_list):
+            new_list.append(ele)
+    return new_list
+    pass
+
+
+# -----------------------------------------------------------------------------
+# PROBLEM 2 — Two sum  (CLASSIC interview question)
+# Given a list of numbers and a target, return the INDICES (as a list of 2)
+# of two numbers that add up to target. Assume exactly one answer exists.
+# Example: two_sum([2, 7, 11, 15], 9) → [0, 1]     (because 2 + 7 = 9)
+#          two_sum([3, 2, 4], 6)      → [1, 2]     (because 2 + 4 = 6)
+# Hint: For each number x, you need (target - x). Store what you've seen
+#       in a dict {value: index}. If the "need" is already in the dict, done!
+# -----------------------------------------------------------------------------
+def two_sum(nums, target):
+    for idx,ele in enumerate(nums):
+        gap= target-ele
+        for i in range(idx+1, len(nums)):
+            if (nums[i]==gap):
+                return ([idx,i])
+    return []   
+    # TODO
+    pass
+
+
+# -----------------------------------------------------------------------------
+# PROBLEM 3 — Word frequency top N
+# Given a list of words and integer n, return the n most frequent words
+# as a list, ordered by frequency (highest first).
+# If two words tie, either order is fine.
+# Example: top_n_words(["a", "b", "a", "c", "b", "a", "d"], 2) → ["a", "b"]
+# Edge case: n greater than unique words → return all of them
+# Hint: count first, then sort by count.
+#       sorted(counts.items(), key=lambda pair: pair[1], reverse=True)
+# -----------------------------------------------------------------------------
+def top_n_words(words, n):
+    # TODO
+    mydict={}
+    for ele in words:
+        if(ele in mydict):
+            mydict[ele]+=1
+        else:
+            mydict[ele]=1
+    
+    #sort dictionary based on its values
+    op_dict= dict(sorted(mydict.items(), key= lambda item:item[1], reverse=True))
+    
+    counter=1
+    new_list=[]
+    for i in op_dict:
+        if(counter<=n):
+            new_list.append(i)
+        counter+=1
+    return new_list
+
+# -----------------------------------------------------------------------------
+# PROBLEM 4 — Anagram check
+# Return True if two strings are anagrams (same letters, different order).
+# Case sensitive. Ignore no whitespace. Length must match too.
+# Example: are_anagrams("listen", "silent") → True
+#          are_anagrams("hello", "world")   → False
+#          are_anagrams("aab", "abb")       → False
+# Hint: Two anagrams have the SAME letter counts. Count each, compare dicts.
+# -----------------------------------------------------------------------------
+def are_anagrams(s1, s2):
+    # TODO
+    mydict1={}
+    mydict2= {}
+    for ele1 in s1:
+        if (ele1 in mydict1):
+            mydict1[ele1]+=1
+        else:
+            mydict1[ele1]=1
+    for ele2 in s2:
+        if (ele2 in mydict2):
+            mydict2[ele2]+=1
+        else:
+            mydict2[ele2]=1
+
+    return mydict1 == mydict2 #dictionaries can compare themselves regardless of order
+
+    pass
+
+
+# -----------------------------------------------------------------------------
+# PROBLEM 5 — First non-repeating character
+# Return the FIRST character in the string that appears only ONCE.
+# If none exists, return None.
+# Example: first_unique("aabbcdd") → "c"
+#          first_unique("aabb")    → None
+#          first_unique("z")       → "z"
+# Hint: Two passes — count everything first, then walk the string in order
+#       and return the first char whose count is 1.
+# -----------------------------------------------------------------------------
+def first_unique(text):
+    # TODO
+    my_dict={}
+    for ele in text:
+        if (ele in my_dict):
+            my_dict[ele]+=1
+        else:
+            my_dict[ele]=1
+
+    for i in text:
+        if(my_dict[i]==1):
+            return i
+    return None    
+
+    pass
+
+
+# =============================================================================
+# TESTS
+# =============================================================================
+def run_tests():
+    tests = [
+        ("P1 unique_in_order",  unique_in_order([1, 2, 2, 3, 1, 4]),     [1, 2, 3, 4]),
+        ("P1 empty",            unique_in_order([]),                     []),
+        ("P1 all same",         unique_in_order([5, 5, 5]),              [5]),
+        ("P1 already unique",   unique_in_order([1, 2, 3]),              [1, 2, 3]),
+
+        ("P2 two_sum basic",    two_sum([2, 7, 11, 15], 9),              [0, 1]),
+        ("P2 two_sum mid",      two_sum([3, 2, 4], 6),                   [1, 2]),
+        ("P2 two_sum negs",     two_sum([-3, 4, 3, 90], 0),              [0, 2]),
+
+        ("P3 top_n_words 2",    top_n_words(["a","b","a","c","b","a","d"], 2), ["a", "b"]),
+        ("P3 top_n_words 1",    top_n_words(["x","y","x","x"], 1),       ["x"]),
+        ("P3 top_n bigger n",   sorted(top_n_words(["a","b"], 5) or []), ["a", "b"]),
+
+        ("P4 anagram yes",      are_anagrams("listen", "silent"),        True),
+        ("P4 anagram no",       are_anagrams("hello", "world"),          False),
+        ("P4 diff length",      are_anagrams("aab", "abb"),              False),
+        ("P4 empty",            are_anagrams("", ""),                    True),
+
+        ("P5 first_unique",     first_unique("aabbcdd"),                 "c"),
+        ("P5 none unique",      first_unique("aabb"),                    None),
+        ("P5 single",           first_unique("z"),                       "z"),
+        ("P5 empty",            first_unique(""),                        None),
+    ]
+    passed = 0
+    for name, got, expected in tests:
+        if got == expected:
+            print(f"  PASS  {name}")
+            passed += 1
+        else:
+            print(f"  FAIL  {name}  expected={expected!r}  got={got!r}")
+    print(f"\n{passed}/{len(tests)} tests passed")
+
+
+if __name__ == "__main__":
+    run_tests()
